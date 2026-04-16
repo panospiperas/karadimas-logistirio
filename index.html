@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Καραδήμας Παναγιώτης | Λογιστικό Γραφείο Λαμία</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f8;
+    line-height: 1.6;
+}
+
+/* Accessibility */
+body.high-contrast {
+    background: black;
+    color: yellow;
+}
+button {
+    cursor: pointer;
+}
+
+/* Header */
+header {
+    background: #1f2d3d;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+nav {
+    background: #2e4053;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Accessibility Bar */
+.accessibility {
+    text-align: center;
+    padding: 10px;
+    background: #ddd;
+}
+
+.hero {
+    padding: 60px 20px;
+    text-align: center;
+    background: white;
+}
+
+section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contact p {
+    margin: 8px 0;
+}
+
+/* Footer */
+footer {
+    background: #1f2d3d;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 22px;
+    }
+}
+</style>
+
+<script>
+function toggleContrast() {
+    document.body.classList.toggle("high-contrast");
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="accessibility">
+    <button onclick="toggleContrast()">🌓 Λειτουργία υψηλής αντίθεσης</button>
+</div>
+
+<header>
+    <h1>Καραδήμας Παναγιώτης</h1>
+    <p>Λογιστικό & Φοροτεχνικό Γραφείο - Λαμία</p>
+</header>
+
+<nav>
+    <a href="#services">Υπηρεσίες</a>
+    <a href="#about">Σχετικά</a>
+    <a href="#contact">Επικοινωνία</a>
+</nav>
+
+<div class="hero">
+    <h2>Αξιόπιστες Λογιστικές Υπηρεσίες</h2>
+    <p>Εξυπηρέτηση ιδιωτών & επιχειρήσεων με συνέπεια και επαγγελματισμό</p>
+</div>
+
+<section id="services">
+    <h2>Υπηρεσίες</h2>
+    <div class="services">
+        <div class="card">
+            <h3>Φορολογικές Δηλώσεις</h3>
+            <p>Υποβολή δηλώσεων για ιδιώτες και επιχειρήσεις</p>
+        </div>
+        <div class="card">
+            <h3>Τήρηση Βιβλίων</h3>
+            <p>Οργάνωση και διαχείριση λογιστικών υποχρεώσεων</p>
+        </div>
+        <div class="card">
+            <h3>Μισθοδοσία</h3>
+            <p>Διαχείριση προσωπικού και μισθοδοσίας</p>
+        </div>
+        <div class="card">
+            <h3>Συμβουλευτική</h3>
+            <p>Οικονομική και φορολογική καθοδήγηση</p>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>Σχετικά με εμάς</h2>
+    <p>
+        Το λογιστικό γραφείο "Καραδήμας Παναγιώτης" στη Λαμία παρέχει ολοκληρωμένες υπηρεσίες 
+        λογιστικής και φοροτεχνικής υποστήριξης, με στόχο την άμεση και αξιόπιστη εξυπηρέτηση κάθε πελάτη.
+    </p>
+    <p>
+        Υποστηρίζουμε πλήρως άτομα με αναπηρία (ΑΜΕΑ), παρέχοντας εύκολη πρόσβαση και φιλική εξυπηρέτηση.
+    </p>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Επικοινωνία</h2>
+    <p>📍 Λαμία</p>
+    <p>📞 6977465003</p>
+    <p>✉ panos.kar83@gmail.com</p>
+</section>
+
+<footer>
+    <p>© 2026 Καραδήμας Παναγιώτης - Λογιστικό Γραφείο</p>
+</footer>
+
+</body>
+</html>
