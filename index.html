@@ -3,80 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Καραδήμας Παναγιώτης | Λογιστικό Γραφείο Λαμία</title>
+
+<title>Λογιστής Λαμία | Καραδήμας Παναγιώτης | Φοροτεχνικό Γραφείο</title>
+
+<meta name="description" content="Λογιστής στη Λαμία - Καραδήμας Παναγιώτης. Φορολογικές δηλώσεις, βιβλία, μισθοδοσία και συμβουλευτική για ιδιώτες & επιχειρήσεις.">
+<meta name="keywords" content="λογιστής Λαμία, φοροτεχνικός Λαμία, δηλώσεις Λαμία, λογιστικό γραφείο Λαμία">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "Καραδήμας Παναγιώτης",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Λαμία",
+    "addressCountry": "GR"
+  },
+  "telephone": "+306977465003"
+}
+</script>
 
 <style>
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     background: #f4f6f8;
-    line-height: 1.6;
-}
-
-/* Accessibility */
-body.high-contrast {
-    background: black;
-    color: yellow;
-}
-button {
-    cursor: pointer;
+    color: #333;
 }
 
 /* Header */
 header {
-    background: #1f2d3d;
+    background: linear-gradient(135deg, #1f2d3d, #2e86c1);
     color: white;
-    padding: 40px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
+/* Navbar */
 nav {
-    background: #2e4053;
+    background: white;
+    padding: 15px;
     text-align: center;
-    padding: 10px;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 nav a {
-    color: white;
     margin: 0 15px;
     text-decoration: none;
-    font-weight: bold;
+    color: #2e4053;
+    font-weight: 600;
 }
 
-/* Accessibility Bar */
-.accessibility {
-    text-align: center;
-    padding: 10px;
-    background: #ddd;
-}
-
+/* Hero */
 .hero {
     padding: 60px 20px;
     text-align: center;
-    background: white;
 }
 
+.hero button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    background: #2e86c1;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.hero button:hover {
+    background: #1f618d;
+}
+
+/* Sections */
 section {
-    padding: 40px 20px;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
+    padding: 50px 20px;
 }
 
+/* Cards */
 .services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
 .card {
     background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 25px;
+    border-radius: 12px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
-.contact p {
-    margin: 8px 0;
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* Contact */
+.contact a {
+    color: #2e86c1;
+    text-decoration: none;
+}
+
+/* Form */
+form {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+input, textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+button.submit-btn {
+    background: #2e86c1;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button.submit-btn:hover {
+    background: #1f618d;
+}
+
+/* Map */
+iframe {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
 }
 
 /* Footer */
@@ -84,20 +149,14 @@ footer {
     background: #1f2d3d;
     color: white;
     text-align: center;
-    padding: 15px;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 22px;
-    }
+    padding: 20px;
 }
 </style>
 
 <script>
-function toggleContrast() {
-    document.body.classList.toggle("high-contrast");
+function sendForm(event) {
+    event.preventDefault();
+    alert("Το μήνυμά σας στάλθηκε επιτυχώς!");
 }
 </script>
 
@@ -105,13 +164,9 @@ function toggleContrast() {
 
 <body>
 
-<div class="accessibility">
-    <button onclick="toggleContrast()">🌓 Λειτουργία υψηλής αντίθεσης</button>
-</div>
-
 <header>
     <h1>Καραδήμας Παναγιώτης</h1>
-    <p>Λογιστικό & Φοροτεχνικό Γραφείο - Λαμία</p>
+    <p>Λογιστής στη Λαμία - Φοροτεχνικό & Λογιστικό Γραφείο</p>
 </header>
 
 <nav>
@@ -121,20 +176,21 @@ function toggleContrast() {
 </nav>
 
 <div class="hero">
-    <h2>Αξιόπιστες Λογιστικές Υπηρεσίες</h2>
-    <p>Εξυπηρέτηση ιδιωτών & επιχειρήσεων με συνέπεια και επαγγελματισμό</p>
+    <h2>Λογιστής στη Λαμία για Ιδιώτες & Επιχειρήσεις</h2>
+    <p>Φορολογικές δηλώσεις, τήρηση βιβλίων και μισθοδοσία στη Λαμία με αξιοπιστία</p>
+    <button onclick="document.getElementById('contact').scrollIntoView()">Κλείσε Ραντεβού</button>
 </div>
 
 <section id="services">
-    <h2>Υπηρεσίες</h2>
+    <h2>Λογιστικές Υπηρεσίες στη Λαμία</h2>
     <div class="services">
         <div class="card">
             <h3>Φορολογικές Δηλώσεις</h3>
-            <p>Υποβολή δηλώσεων για ιδιώτες και επιχειρήσεις</p>
+            <p>Υποβολή δηλώσεων στη Λαμία για ιδιώτες και επιχειρήσεις</p>
         </div>
         <div class="card">
             <h3>Τήρηση Βιβλίων</h3>
-            <p>Οργάνωση και διαχείριση λογιστικών υποχρεώσεων</p>
+            <p>Λογιστική υποστήριξη επιχειρήσεων στη Λαμία</p>
         </div>
         <div class="card">
             <h3>Μισθοδοσία</h3>
@@ -142,31 +198,50 @@ function toggleContrast() {
         </div>
         <div class="card">
             <h3>Συμβουλευτική</h3>
-            <p>Οικονομική και φορολογική καθοδήγηση</p>
+            <p>Φοροτεχνικός σύμβουλος στη Λαμία για κάθε ανάγκη</p>
         </div>
     </div>
 </section>
 
 <section id="about">
-    <h2>Σχετικά με εμάς</h2>
+    <h2>Σχετικά με τον Λογιστή στη Λαμία</h2>
     <p>
-        Το λογιστικό γραφείο "Καραδήμας Παναγιώτης" στη Λαμία παρέχει ολοκληρωμένες υπηρεσίες 
-        λογιστικής και φοροτεχνικής υποστήριξης, με στόχο την άμεση και αξιόπιστη εξυπηρέτηση κάθε πελάτη.
-    </p>
-    <p>
-        Υποστηρίζουμε πλήρως άτομα με αναπηρία (ΑΜΕΑ), παρέχοντας εύκολη πρόσβαση και φιλική εξυπηρέτηση.
+        Ο λογιστής Καραδήμας Παναγιώτης στη Λαμία προσφέρει ολοκληρωμένες υπηρεσίες 
+        φοροτεχνικής και λογιστικής υποστήριξης για ιδιώτες και επιχειρήσεις στην περιοχή της Λαμίας.
     </p>
 </section>
 
 <section id="contact" class="contact">
-    <h2>Επικοινωνία</h2>
+    <h2>Επικοινωνία με Λογιστή στη Λαμία</h2>
+
+    <p><strong>Λογιστής στη Λαμία</strong></p>
     <p>📍 Λαμία</p>
-    <p>📞 6977465003</p>
-    <p>✉ panos.kar83@gmail.com</p>
+    <p>📞 <a href="tel:6977465003">6977465003</a></p>
+    <p>✉ <a href="mailto:panos.kar83@gmail.com">panos.kar83@gmail.com</a></p>
+    <p>Εξυπηρέτηση σε όλη τη Λαμία και γύρω περιοχές</p>
+
+    <h3>Τοποθεσία</h3>
+    <iframe 
+        src="https://www.google.com/maps?q=Λαμία&output=embed"
+        width="100%" 
+        height="300" 
+        loading="lazy">
+    </iframe>
+
+    <h3>Στείλτε μήνυμα</h3>
+
+    <form onsubmit="sendForm(event)">
+        <input type="text" placeholder="Ονοματεπώνυμο" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Τηλέφωνο">
+        <textarea rows="5" placeholder="Το μήνυμά σας" required></textarea>
+        <button type="submit" class="submit-btn">Αποστολή</button>
+    </form>
+
 </section>
 
 <footer>
-    <p>© 2026 Καραδήμας Παναγιώτης - Λογιστικό Γραφείο</p>
+    <p>© 2026 Καραδήμας Παναγιώτης - Λογιστικό Γραφείο Λαμία</p>
 </footer>
 
 </body>
