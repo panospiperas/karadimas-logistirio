@@ -8,6 +8,178 @@
 
 <meta name="description" content="Λογιστής στη Λαμία - Καραδήμας Παναγιώτης. Φορολογικές δηλώσεις, βιβλία, μισθοδοσία και συμβουλευτική για ιδιώτες & επιχειρήσεις.">
 <meta name="keywords" content="λογιστής Λαμία, φοροτεχνικός Λαμία, δηλώσεις Λαμία, λογιστικό γραφείο Λαμία">
+  <meta name="robots" content="index, follow">
+
+<!-- Performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Schema SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "Καραδήμας Παναγιώτης",
+  "areaServed": "Λαμία",
+  "telephone": "+306977465003"
+}
+</script>
+
+<!-- reCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8;color:#333;line-height:1.6}
+img{max-width:100%;height:auto}
+main{max-width:1000px;margin:auto;padding:20px}
+header{padding:30px;text-align:center;background:#2e86c1;color:white}
+nav{display:flex;gap:15px;justify-content:center;padding:10px;background:white;position:sticky;top:0}
+nav a{text-decoration:none;color:#333;font-weight:bold}
+
+/* Accessibility */
+:focus{outline:3px solid #ffcc00}
+.high-contrast{background:black!important;color:yellow!important}
+.high-contrast a{color:cyan!important}
+.highlight-links a{background:yellow;color:black!important}
+.dyslexia{font-family:"Comic Sans MS",Arial}
+
+#accessibility-btn{
+position:fixed;bottom:20px;right:20px;
+background:#2e86c1;color:white;border:none;
+padding:14px;border-radius:50%;cursor:pointer;z-index:9999}
+
+#accessibility-panel{
+position:fixed;bottom:80px;right:20px;
+background:white;padding:12px;border-radius:10px;
+display:none;box-shadow:0 5px 20px rgba(0,0,0,0.2);z-index:9999}
+
+#accessibility-panel button{display:block;margin:5px 0;width:100%}
+
+/* Cookie */
+.cookie-banner{
+position:fixed;bottom:0;width:100%;
+background:#222;color:white;padding:15px;
+text-align:center;z-index:9998
+}
+</style>
+
+<script>
+let fontSize=100;
+
+(function(){ emailjs.init("YOUR_PUBLIC_KEY"); })();
+
+function sendEmail(e){
+ e.preventDefault();
+
+ if(!document.getElementById("consent").checked){
+  alert("Απαιτείται συγκατάθεση GDPR");return;
+ }
+
+ if(grecaptcha.getResponse()===""){
+  alert("Επιβεβαιώστε το reCAPTCHA");return;
+ }
+
+ emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",{
+  from_name:document.getElementById("name").value,
+  from_email:document.getElementById("email").value,
+  message:document.getElementById("msg").value
+ }).then(()=>{
+  alert("Το μήνυμα στάλθηκε επιτυχώς!");
+  grecaptcha.reset();
+ });
+}
+
+function togglePanel(){
+ document.getElementById("accessibility-panel").style.display=
+ document.getElementById("accessibility-panel").style.display==="block"?"none":"block";
+}
+function increaseFont(){fontSize+=10;document.body.style.fontSize=fontSize+"%"}
+function decreaseFont(){fontSize-=10;document.body.style.fontSize=fontSize+"%"}
+function toggleContrast(){document.body.classList.toggle("high-contrast")}
+function highlightLinks(){document.body.classList.toggle("highlight-links")}
+function toggleDyslexia(){document.body.classList.toggle("dyslexia")}
+function resetAll(){
+ fontSize=100;
+ document.body.style.fontSize="100%";
+ document.body.classList.remove("high-contrast","highlight-links","dyslexia");
+}
+
+function acceptCookies(){
+ document.querySelector('.cookie-banner').style.display='none';
+ localStorage.setItem('cookiesAccepted',true);
+}
+
+window.onload=()=>{
+ if(localStorage.getItem('cookiesAccepted')){
+  document.querySelector('.cookie-banner').style.display='none';
+ }
+}
+</script>
+</head>
+
+<body>
+
+<header>
+<h1>Λογιστής Λαμία - Καραδήμας Παναγιώτης</h1>
+<p>Φοροτεχνικές υπηρεσίες για ιδιώτες και επιχειρήσεις</p>
+</header>
+
+<nav aria-label="Κύρια πλοήγηση">
+<a href="#services">Υπηρεσίες</a>
+<a href="#contact">Επικοινωνία</a>
+</nav>
+
+<main>
+<section id="services">
+<h2>Υπηρεσίες</h2>
+<p>Φορολογικές δηλώσεις, βιβλία, μισθοδοσία και συμβουλευτική.</p>
+</section>
+
+<section id="contact">
+<h2>Επικοινωνία</h2>
+
+<form onsubmit="sendEmail(event)">
+<input id="name" type="text" placeholder="Όνομα" required>
+<input id="email" type="email" placeholder="Email" required>
+<textarea id="msg" placeholder="Μήνυμα" required></textarea>
+
+<label>
+<input type="checkbox" id="consent"> Συμφωνώ με την Πολιτική Απορρήτου
+</label>
+
+<div class="g-recaptcha" data-sitekey="6Lfw2sUsAAAAAAJJLbUFyecYWqh0zUk5pcJma3f6"></div>
+
+<button type="submit">Αποστολή</button>
+</form>
+</section>
+
+<section>
+<h2>Πολιτική Απορρήτου</h2>
+<p>Τα δεδομένα χρησιμοποιούνται μόνο για επικοινωνία και δεν κοινοποιούνται.</p>
+</section>
+</main>
+
+<!-- Accessibility -->
+<button id="accessibility-btn" onclick="togglePanel()">♿</button>
+
+<div id="accessibility-panel">
+<button onclick="increaseFont()">A+</button>
+<button onclick="decreaseFont()">A-</button>
+<button onclick="toggleContrast()">Contrast</button>
+<button onclick="highlightLinks()">Links</button>
+<button onclick="toggleDyslexia()">Dyslexia</button>
+<button onclick="resetAll()">Reset</button>
+</div>
+
+<!-- Cookies -->
+<div class="cookie-banner">
+Χρησιμοποιούμε cookies για καλύτερη εμπειρία.
+<button onclick="acceptCookies()">Αποδοχή</button>
+</div>
+
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
