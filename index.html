@@ -126,30 +126,6 @@ window.onload=()=>{
 <p>Φορολογικές δηλώσεις, βιβλία, μισθοδοσία και συμβουλευτική.</p>
 </section>
 
-<section id="contact">
-<h2>Επικοινωνία</h2>
-
-<form onsubmit="sendEmail(event)">
-<input id="name" type="text" placeholder="Όνομα" required>
-<input id="email" type="email" placeholder="Email" required>
-<textarea id="msg" placeholder="Μήνυμα" required></textarea>
-
-<label>
-<input type="checkbox" id="consent"> Συμφωνώ με την Πολιτική Απορρήτου
-</label>
-
-<div class="g-recaptcha" data-sitekey="6Lfw2sUsAAAAAAJJLbUFyecYWqh0zUk5pcJma3f6"></div>
-
-<button type="submit">Αποστολή</button>
-</form>
-</section>
-
-<section>
-<h2>Πολιτική Απορρήτου</h2>
-<p>Τα δεδομένα χρησιμοποιούνται μόνο για επικοινωνία και δεν κοινοποιούνται.</p>
-</section>
-</main>
-
 <!-- Accessibility -->
 <button id="accessibility-btn" onclick="togglePanel()">♿</button>
 
@@ -388,14 +364,26 @@ function sendForm(event) {
 
     <h3>Στείλτε μήνυμα</h3>
 
-    <form onsubmit="sendForm(event)">
-        <input type="text" placeholder="Ονοματεπώνυμο" required>
-        <input type="email" placeholder="Email" required>
-        <input type="tel" placeholder="Τηλέφωνο">
-        <textarea rows="5" placeholder="Το μήνυμά σας" required></textarea>
+<form onsubmit="sendEmail(event)">
+<input id="name" type="text" placeholder="Όνομα" required>
+<input id="email" type="email" placeholder="Email" required>
+<textarea id="msg" placeholder="Μήνυμα" required></textarea>
+
+<label>
+<input type="checkbox" id="consent"> Συμφωνώ με την Πολιτική Απορρήτου
+</label>
+
+<div class="g-recaptcha" data-sitekey="6Lfw2sUsAAAAAAJJLbUFyecYWqh0zUk5pcJma3f6"></div>
+
         <button type="submit" class="submit-btn">Αποστολή</button>
     </form>
 
+<section>
+<h2>Πολιτική Απορρήτου</h2>
+<p>Τα δεδομένα χρησιμοποιούνται μόνο για επικοινωνία και δεν κοινοποιούνται.</p>
+</section>
+</main>
+  
 </section>
 
 <footer>
